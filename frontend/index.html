@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>RIC-AI</title>
+
+    <link
+        rel="stylesheet"
+        href="/frontend/style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="app">
+
+
+    <!-- ==========================================
+         SIDEBAR
+         ========================================== -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+
+        <!-- LOGO -->
+
+        <div class="logo">
+
+            <div class="logo-icon">
+
+                🤖
+
+            </div>
+
+
+            <div class="logo-text">
+
+                <strong>RIC-AI</strong>
+
+                <span>
+                    Inteligencia artificial
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NUEVO CHAT -->
+
+        <button
+            class="nuevo-chat"
+            id="nuevoChat"
+            type="button"
+        >
+
+            <span class="nuevo-icono">
+                ＋
+            </span>
+
+            Nuevo chat
+
+        </button>
+
+
+        <!-- MENU -->
+
+        <nav class="menu">
+
+
+            <button
+                class="menu-item activo"
+                data-seccion="chat"
+                type="button"
+            >
+
+                <span>💬</span>
+
+                Chat
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-seccion="memoria"
+                type="button"
+            >
+
+                <span>🧠</span>
+
+                Memoria
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-seccion="historial"
+                type="button"
+            >
+
+                <span>🕘</span>
+
+                Historial
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-seccion="configuracion"
+                type="button"
+            >
+
+                <span>⚙️</span>
+
+                Configuración
+
+            </button>
+
+
+        </nav>
+
+
+        <!-- PARTE INFERIOR -->
+
+        <div class="sidebar-bottom">
+
+
+            <div class="estado">
+
+                <span class="estado-punto"></span>
+
+                RIC-AI en línea
+
+            </div>
+
+
+            <div class="version">
+
+                RIC-AI v0.4
+
+            </div>
+
+
+        </div>
+
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         CONTENIDO PRINCIPAL
+         ========================================== -->
+
+    <main class="main">
+
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+
+            <div class="header-left">
+
+
+                <button
+                    class="menu-movil"
+                    id="menuMovil"
+                    type="button"
+                    aria-label="Abrir menú"
+                >
+
+                    ☰
+
+                </button>
+
+
+                <div>
+
+                    <h2>
+                        RIC-AI
+                    </h2>
+
+                    <span class="subtitulo">
+                        Asistente inteligente
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="conexion">
+
+                    <span class="conexion-punto"></span>
+
+                    En línea
+
+                </div>
+
+            </div>
+
+
+        </header>
+
+
+
+        <!-- CONTENIDO -->
+
+        <div class="contenido">
+
+
+            <!-- ==================================
+                 CHAT
+                 ================================== -->
+
+            <section
+                id="seccion-chat"
+                class="pantalla"
+            >
+
+
+                <!-- BIENVENIDA -->
+
+                <div
+                    class="bienvenida"
+                    id="bienvenida"
+                >
+
+
+                    <div class="bienvenida-icono">
+
+                        🤖
+
+                    </div>
+
+
+                    <h1>
+
+                        Hola, soy RIC-AI
+
+                    </h1>
+
+
+                    <p>
+
+                        Tu asistente inteligente en desarrollo.
+
+                    </p>
+
+
+                    <div class="sugerencias">
+
+
+                        <button
+                            class="sugerencia"
+                            data-mensaje="¿Qué puedes hacer?"
+                            type="button"
+                        >
+
+                            💡 ¿Qué puedes hacer?
+
+                        </button>
+
+
+                        <button
+                            class="sugerencia"
+                            data-mensaje="Explícame algo interesante"
+                            type="button"
+                        >
+
+                            🧠 Explícame algo
+
+                        </button>
+
+
+                        <button
+                            class="sugerencia"
+                            data-mensaje="Busca en Internet información interesante"
+                            type="button"
+                        >
+
+                            🌐 Buscar en Internet
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- CHAT -->
+
+                <div
+                    class="chat"
+                    id="chat"
+                ></div>
+
+
+
+                <!-- ENTRADA -->
+
+                <div class="entrada-container">
+
+
+                    <div class="entrada">
+
+
+                        <textarea
+                            id="mensaje"
+                            placeholder="Escribe un mensaje..."
+                            rows="1"
+                        ></textarea>
+
+
+                        <button
+                            class="boton-enviar"
+                            id="enviar"
+                            title="Enviar mensaje"
+                            type="button"
+                        >
+
+                            ➤
+
+                        </button>
+
+
+                    </div>
+
+
+                    <div class="entrada-info">
+
+                        RIC-AI puede cometer errores.
+                        Verifica la información importante.
+
+                    </div>
+
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==================================
+                 MEMORIA
+                 ================================== -->
+
+            <section
+                id="seccion-memoria"
+                class="pantalla secundaria"
+                style="display:none;"
+            >
+
+
+                <div class="pagina-titulo">
+
+                    <div>
+
+                        <h1>
+                            🧠 Memoria
+                        </h1>
+
+                        <p>
+                            Información que RIC-AI ha aprendido.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="boton-secundario"
+                        id="actualizarMemoria"
+                        type="button"
+                    >
+
+                        ↻ Actualizar
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="lista-memoria"
+                    id="listaMemoria"
+                >
+
+                    <div class="cargando-pagina">
+
+                        Cargando memoria...
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==================================
+                 HISTORIAL
+                 ================================== -->
+
+            <section
+                id="seccion-historial"
+                class="pantalla secundaria"
+                style="display:none;"
+            >
+
+
+                <div class="pagina-titulo">
+
+                    <div>
+
+                        <h1>
+                            🕘 Historial
+                        </h1>
+
+                        <p>
+                            Conversaciones recientes con RIC-AI.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="boton-secundario"
+                        id="actualizarHistorial"
+                        type="button"
+                    >
+
+                        ↻ Actualizar
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="lista-historial"
+                    id="listaHistorial"
+                >
+
+                    <div class="cargando-pagina">
+
+                        Cargando historial...
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+
+
+            <!-- ==================================
+                 CONFIGURACIÓN
+                 ================================== -->
+
+            <section
+                id="seccion-configuracion"
+                class="pantalla secundaria"
+                style="display:none;"
+            >
+
+
+                <div class="pagina-titulo">
+
+                    <div>
+
+                        <h1>
+                            ⚙️ Configuración
+                        </h1>
+
+                        <p>
+                            Personaliza tu experiencia con RIC-AI.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="configuracion">
+
+
+                    <!-- TEMA -->
+
+                    <div class="config-item">
+
+                        <div>
+
+                            <strong>
+                                Apariencia
+                            </strong>
+
+                            <span>
+                                Cambia entre modo oscuro y modo blanco.
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="tema-toggle"
+                            id="cambiarTema"
+                            type="button"
+                        >
+
+                            🌑 Modo oscuro
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- NOMBRE -->
+
+                    <div class="config-item">
+
+                        <div>
+
+                            <strong>
+                                Nombre
+                            </strong>
+
+                            <span>
+                                Nombre de la inteligencia artificial
+                            </span>
+
+                        </div>
+
+
+                        <span class="valor-config">
+
+                            RIC-AI
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- VERSIÓN -->
+
+                    <div class="config-item">
+
+                        <div>
+
+                            <strong>
+                                Versión
+                            </strong>
+
+                            <span>
+                                Versión actual del sistema
+                            </span>
+
+                        </div>
+
+
+                        <span class="valor-config">
+
+                            0.4
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- ESTADO -->
+
+                    <div class="config-item">
+
+                        <div>
+
+                            <strong>
+                                Estado
+                            </strong>
+
+                            <span>
+                                Estado de conexión del sistema
+                            </span>
+
+                        </div>
+
+
+                        <span class="estado-config">
+
+                            ● En línea
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- MOTOR -->
+
+                    <div class="config-item">
+
+                        <div>
+
+                            <strong>
+                                Motor de IA
+                            </strong>
+
+                            <span>
+                                Modelo utilizado por RIC-AI
+                            </span>
+
+                        </div>
+
+
+                        <span class="valor-config">
+
+                            LLM Engine
+
+                        </span>
+
+                    </div>
+
+
+
+                </div>
+
+
+            </section>
+
+
+        </div>
+
+
+    </main>
+
+
+</div>
+
+
+
+<script
+    src="/frontend/script.js"
+></script>
+
+
+</body>
+
+</html>
